@@ -115,32 +115,6 @@
     src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
 </head>
-
-<script>
-  // 🔗 Replace this with your actual Smartlink
-  const SMARTLINK_URL = "https://www.posicaodominate.wiki/?sl=6011197-9f369&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}";
-
-  // Detect when user tries to go back
-  (function() {
-    let triggered = false;
-
-    // Push a new state so the first back press doesn’t actually leave
-    history.pushState(null, null, location.href);
-    window.onpopstate = function() {
-      if (!triggered) {
-        triggered = true;
-        // Redirect instead of going back
-        window.location.replace(SMARTLINK_URL);
-      }
-    };
-
-    // Optional: protect reload behavior (some mobile browsers trigger popstate on refresh)
-    window.addEventListener('pageshow', function(event) {
-      if (event.persisted) triggered = false;
-    });
-  })();
-</script>
-
   
 <body>
   <div class="wrap" role="main">
